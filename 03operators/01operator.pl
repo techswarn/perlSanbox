@@ -1,0 +1,15 @@
+my $x=10;
+my $y=2;
+my $z;
+$z=$x+$y;
+print ("Add of $x and $y is $z \n");
+$z=$x-$y;
+print ("Sub of $x and $y is $z \n");
+$z=$x*$y;
+print ("Mul of $x and $y is $z \n");
+$z=$x/$y;
+print ("Div of $x and $y is $z \n");
+$z=$x**$y;
+print ("Exp of $x and $y is $z \n");
+$z=$x%$y;
+print ("Mod of $x and $y is $z \n");

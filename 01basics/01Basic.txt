@@ -1,0 +1,109 @@
+#!/usr/bin/perl -w
+#! use warnings;
+
+print("Hello world");
+
+# TO install perl modules first install
+# cpan App::cpanminus
+#This will install cpan. Then additional modules can be installed using cpan –i <Module_Name>
+#
+
+#Perl variables, There are three types: Scalars, Arrays, Hashes
+
+#Scalar Variables
+This type of value holds a single value. its name begins with dollar sign and Perl identifier.
+example: $variable_name;
+$var;
+$Var32;
+$vaRRR43;
+$name_underscore_23;
+
+There are two types of Scaler data types
+1) Numbers
+2) Strings
+
+
+Number can be Integer like 0,25,69.
+Floating points can be 3.16,6.74,0.333
+
+Integer literals:
+0; -256;
+
+Floating point literals:
+3.14;
+255.000;
+3.6e20;                                  # it's 3.6 times 10 to the 20th
+-3.6e20;                                 # same as above, but negative
+-3.6e-20;                                #it's negative 3.6 times 10 to the -20th
+-3.6E-20;                                #we also can use E – this means the same the lowercase version -3.6e-20
+
+Other variables:
+
+255;                               # 255 in decimal notation
+0377;                                   # 255 in octal notation
+0xff;                                   # 255 in hexadecimal notation
+0b11111111;                             # 255 in binary notation
+
+String:
+
+>Single quotes string literals
+Example:
+#! /usr/bin/perl
+
+$num = 7;
+$txt = 'It is $num';
+print $txt;
+
+>Double quotes string literals
+
+$num = 8;
+$txt = "The number is $num";
+print $txt;
+
+Construct	Description
+\n	newline
+\r	return
+\t	tab
+\f	formfeed
+\b	backspace
+\a	bell
+\e	escape
+\007	any octal ASCII value (here, 007 = bell)
+\x7f	any hex value (here, 7f = delete)
+\\	backslash
+\"	double quote
+\l	lowercase next letter
+\L	lowercase all following letters until \E
+\u	uppercase next letter
+\U	uppercase all following letters until \E
+\E	Terminate \L, \U
+
+String concatenation:
+
+#! /usr/bin/perl
+
+$a = "Tom is";
+$b = "favorite cat";
+$c = "$a . " monther's " . $b;
+print $c;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+1)First need to install DBD::mysql module.
+2) access CPAN shell
+
+C:\>perl -MCPAN -e shell
+
+cpan shell -- CPAN exploration and modules installation (v1.9800)
+Enter 'h' for help.
+
+3) Then install DBD::mysql
+cpan> install DBD:mysql
+
+Connecting to mysql database:
+
+my $dbh = DBI->connect("DBI:mysql:classicmodels",'root','');
+
+If connection passes then the method will return object or else it will return false 
+if(!$dbh){
+ die "failed to connect to MySQL database DBI->errstr()";
+}else{
+ print("Connected to MySQL server successfully.\n");
+}
+
+To disconnect from the database
+$dbh->disconnect();
+
+#!/usr/bin/perl
+use strict;
+use warnings;
+use DBI;
+
+my $dbh = DBI->connect("DBI:mysql:classicmodels",'root','');
+
+die "failed to connect to MySQL database:DBI->errstr()" unless($dbh);
+
+# prepare SQL statement
+my $sth = $dbh->prepare("SELECT lastname, firstname, extension FROM employees")
+                   or die "prepare statement failed: $dbh->errstr()";
+
+$sth->execute() or die "execution failed: $dbh->errstr()"; 
+
+my($lname,$fname,$ext);
+
+# loop through each row of the result set, and print it
+while(($lname,$fname,$ext) = $sth->fetchrow()){
+   print("$lname, $fname\t$ext\n");                   
+}
+
+$sth->finish();
+$dbh->disconnect();
+
