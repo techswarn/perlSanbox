@@ -15,3 +15,6 @@ my $str = "hello" . " There";
 my $num = 4 + 2 ;
 
 print $num;
+
+print qq(His name is "name");
+print qq [His "real name ) is ($name)];

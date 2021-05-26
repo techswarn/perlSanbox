@@ -1,0 +1,6 @@
+exit()
+- Exits from Program
+warn()
+- Writes to STDERR
+die()
+-writes to STDERR and exits from the program;

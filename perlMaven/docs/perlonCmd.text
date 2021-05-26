@@ -1,0 +1,2 @@
+Perl on command line 
+ perl -e "print 42";

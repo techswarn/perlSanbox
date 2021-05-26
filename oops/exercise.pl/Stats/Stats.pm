@@ -11,7 +11,7 @@ sub new{
     bless ($self, $class);
     return $self;
 }
-
+        
 sub total{
     my $self = shift;
     return $self->{_english}+$self->{_kannada}+$self->{_maths}+$self->{_science};

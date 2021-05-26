@@ -1,0 +1,51 @@
+Example of mason code:
+
+% my @friends = qw(Paul Jacinta Damian Kirrily);
+% my $random_friends = $friends[rand @friends];
+
+<p><% $random_friends %> says "hello world!"</p>
+
+If we have a lot of Perl that we want to execute, we can use a special <%perl> block:
+<%perl>
+my @friends = qw(Paul Jacinta Damian Kirrily);
+my $random_friend = $friends[rand @friends];
+</%perl>
+<p><% $random_friend %> says "Hello World!"</p>
+
+We can combine HTML and perl
+<%perl>
+my @friends = qw(Swarn suhan ranju);
+my $random_friends = $friends[rand @friends];
+</%perl>
+
+<p>My random friends include:</p>
+
+<ul> 
+% foreach my $friends(@friends){
+    <li><%friends%></li>
+}
+</ul>
+
+We can also create components like navbar and call it in other components
+<ul id="navigation">
+<li><a href="/">Home</a></li>
+<li><a href="/specials.html">Specials</a></li>
+<li><a href="/games.html">Fun and Games</a></li>
+<li><a href="/contact.html">Contact Us</a></li>
+</ul>
+
+Save tthe file as navigation.mhtml
+//usage
+<html>
+<head><title>My Example Page</title></head>
+<body>
+<!-- Here’s our navigation -->
+<& navigation.mhtml &>
+<!-- Here’s our content -->
+<p>Welcome to my example page!</p>
+</body>
+</html>
+
+
+
+

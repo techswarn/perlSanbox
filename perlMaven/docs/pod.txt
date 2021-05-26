@@ -1,0 +1,27 @@
+POD- Plain old Documentaition
+
+#!/usr/bin/perl 
+
+use strict;
+use warnings;
+
+print "Hello, there is no more code here\n";
+
+=head1 Explain how PODs work
+
+Documentaion starts any time when there is a =tag
+at the biginning of a line(tag can be any word) and ends where there is 
+a =cut 
+ 
+
+ Example:
+
+ =head1 This is to explain how 
+ Documentaion in perl is written
+ Here is an Example
+
+ =cut
+
+ To read documentation in perl use the following command
+
+perldoc filename.pl

@@ -1,0 +1,85 @@
+Operators for matching are: =~ and !~
+
+example: $foo =~ m/abc/
+=~m is match operator.
+
+To escape the delimiter use backslash \
+example "/foo\/bar/"
+
+The meta character | is used to match one thing with the other.
+example: $foo =~ m/this|that/|
+        $foo =~ m/th(is|at) thing/
+
+$foo =~ m/fee|fie|foe|fum/ this matches  any of the sequences "feed", "field", "Defoe", "fume", and many others are in $foo
+Instead use the following: 
+$foo =~ m/\b(fee|fie|foe|fum)\b/
+
+The Match Operator
+m//
+if ($bar =~ /foo/)
+if ($bar =~ m[foo]) 
+You can omit m from m// if the delimiters are forward slashes, but for all other delimiters you must use the m prefix.
+
+i >> Matches the case insensitive 
+m >> Specifies that if the string has a newline or carriage return characters , the ^ and $ operator will now match against a newline boundry, instead 
+of a string boundry
+0 evaluates the expression only once
+s >> Allows use of . to match a new character
+x >> allows you to use white spaces in the expression for clarity
+g >> Globally finds all matchescg >> Allows the search to continue even after the match fails. 
+
+Matching Only Once:
+ ?PATTERN? operator
+ This basically  indentical to the m// operator except that it only matches
+  once within the string you are searching between each call to reset
+
+  @list = qw/food foosball subeo footnote terfoot canic footbrdige/;
+
+foreach (@list) {
+   $first = $1 if /(foo.*?)/;
+   $last = $1 if /(foo.*)/;
+}
+print "First: $first, Last: $last\n";
+
+To be more clear:
+
+1) Pattern Matching or match regular expression:
+
+The match operator : m// is used to match a string or a statment against a regular expression. // acts as a delimiter and this delimiter can also each
+be like m{}, m(), m><, etc . The expression is written in between two forward slashes used in the operator. 
+
+2) Substitute (Search and replace) regular expression:The substitute operator “s///” is used to search a specific word and then replace it with a given regular expression. 
+The forward slash used in the operator ( s/// ) acts as the delimiter.
+
+Syntax: s/PATTERN/REPLACEMENT/;
+
+3) Global Charater Transliteration regular expression:The translation or transliteration operator “tr///” or “y///” is used to replace all the occurrences of a character with a given single character.
+ The forward slash used in the operator ( tr/// and y/// ) acts as the delimiter. 
+
+tr/SEARCHLIST/REPLACEMENTLIST/
+y/SEARCHLIST/REPLACEMENTLIST/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
